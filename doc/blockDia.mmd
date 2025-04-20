@@ -1,0 +1,49 @@
+graph TD
+    subgraph User Application
+        App[Приложение -Контрол / ERP]
+    end
+
+    subgraph uhf_rfid_async Library
+        Core[core/Reader] -- Инициализира / Използва --> Transport[transport/BaseTransport]
+        Core -- Инициализира / Използва --> Protocol[protocols/BaseProtocol]
+        Core -- Извиква --> Commands[protocols/cph/commands.py]
+        Core -- Управлява --> Dispatcher[core/Dispatcher]
+        Core -- Докладва --> Status[core/Status]
+        Core -- Хвърля --> Errors[core/exceptions.py]
+
+        App -- Използва --> Core
+
+        Transport -- Имплементиран от --> Serial[transport/SerialTransport]
+        Transport -- Имплементиран от --> TCP[transport/TcpTransport]
+        Transport -- Имплементиран от --> UDP[transport/UdpTransport]
+        Transport -- Имплементиран от --> Mock[transport/MockTransport]
+
+        ProtocolRegistry[protocols/Registry] -- Предоставя инстанция --> Core
+        Protocol -- Имплементиран от --> CPHProto[protocols/cph/protocol.py]
+        CPHProto -- Използва --> Framing[protocols/framing.py]
+        CPHProto -- Използва --> TLV[protocols/cph/tlv.py]
+        CPHProto -- Използва --> Constants[protocols/cph/constants.py]
+        Commands -- Използва --> Constants
+        TLV -- Използва --> Constants
+
+        Framing -- Използва --> Checksum[protocols/framing.py Checksum Func]
+
+        Dispatcher -- Получава данни от --> Transport
+        Dispatcher -- Използва --> Framing
+        Dispatcher -- Използва --> Protocol
+        Dispatcher -- Извиква --> Callback[Регистриран Callback в App]
+        Dispatcher -- Връща отговор към --> Core
+
+        Serial -- Комуникира с --> HW[(Сериен Порт)]
+        TCP -- Комуникира с --> HW[(TCP/IP Мрежа)]
+        UDP -- Комуникира с --> HW[(UDP/IP Мрежа)]
+        Mock -- Симулира --> HW[(Симулиран Четец)]
+
+    end
+
+    style App fill:#f9f,stroke:#333,stroke-width:2px
+    style Core fill:#ccf,stroke:#333,stroke-width:2px
+    style Transport fill:#cfc,stroke:#333,stroke-width:1px
+    style Protocol fill:#fec,stroke:#333,stroke-width:1px
+    style Dispatcher fill:#ccf,stroke:#333,stroke-width:1px
+    style HW fill:#eee,stroke:#666,stroke-width:1px,stroke-dasharray: 5 5

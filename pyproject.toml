@@ -1,0 +1,76 @@
+# pyproject.toml
+
+[build-system]
+# Specifies that setuptools will be used to build the package
+requires = ["setuptools>=61.0"] # Minimum version of setuptools
+build-backend = "setuptools.build_meta"
+
+[project]
+# --- Core Metadata ---
+name = "uhf_rfid"
+version = "0.2.0" # Start with an initial version
+authors = [
+    # Add your name and email (optional)
+    { name = "Your Name", email = "your.email@example.com" },
+]
+description = "Asynchronous library for communicating with UHF RFID readers, initially supporting CPH protocol."
+readme = "README.md" # Path to the README file
+license = { file = "LICENSE" } # Assumes you have a LICENSE file (e.g., MIT)
+requires-python = ">=3.8" # Minimum Python version required
+classifiers = [
+    # Trove classifiers (https://pypi.org/classifiers/)
+    "Development Status :: 3 - Alpha", # Or 4 - Beta if more mature
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License", # Change if using a different license
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+    "Topic :: System :: Hardware :: Hardware Drivers",
+    "Topic :: Communications",
+    "Typing :: Typed", # Indicates the library uses type hints
+]
+keywords = ["rfid", "uhf", "asyncio", "serial", "tcp", "cph", "reader"]
+
+# --- Dependencies ---
+dependencies = [
+    # Core dependencies required for the library to function
+    "pyserial-asyncio>=0.6", # For SerialTransport
+    # asyncio is part of standard library since Python 3.4, no need to list
+]
+
+# --- Optional Dependencies (for specific features or development) ---
+[project.optional-dependencies]
+dev = [
+    # Dependencies for development (testing, linting, formatting)
+    "pytest>=7.0",
+    "pytest-asyncio>=0.18",
+    # Add linters/formatters if you use them (e.g., flake8, black, mypy)
+    # "flake8",
+    # "black",
+    # "mypy",
+]
+# You could add optional dependencies for other transports if they required extra packages
+# e.g.
+# bluetooth = [
+#     "bleak"
+# ]
+
+# --- Project URLs (Optional) ---
+[project.urls]
+Homepage = "https://github.com/aaamil13/uhf_rfid" # Replace with your repo URL
+# Issues = "https://github.com/your_username/uhf_rfid/issues"
+# Documentation = "..." # Link to documentation if you host it
+
+# --- Setuptools Specific Configuration (Optional, can also be in setup.cfg) ---
+[tool.setuptools.packages.find]
+where = ["."] # Търси пакети в основната директория
+include = ["uhf_rfid*"] # Включва пакета uhf_rfid
+exclude = ["tests*", "examples*"]
+
+[tool.setuptools.package-data]
+# If you had non-Python files inside your package (e.g., data files), list them here
+# "uhf_rfid" = ["*.dat"] # Example
