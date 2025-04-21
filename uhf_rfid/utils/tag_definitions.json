@@ -1,0 +1,82 @@
+{
+  "manufacturers": {
+    "1": { 
+      "name": "Impinj", 
+      "models": {
+        "436": { 
+          "model_name": "Monza R6", 
+          "memory": {
+            "epc_bits": 96,
+            "user_bits": 0,
+            "tid_bits": 96,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["QT_SR", "QT_PE"],
+          "notes": "Standard high-performance tag."
+        },
+        "437": { 
+          "model_name": "Monza R6-P",
+          "memory": {
+            "epc_bits": 128,
+            "user_bits": 512, 
+            "tid_bits": 96,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["QT_SR", "QT_PE", "UserMemory"],
+          "notes": "Includes User Memory and additional EPC."
+        }
+        
+      }
+    },
+    "2": { 
+      "name": "Alien Technology",
+      "models": {
+         "218": { 
+            "model_name": "Higgs 3",
+            "memory": {
+                "epc_bits": 96, 
+                "user_bits": 512,
+                "tid_bits": 64, 
+                "reserved_access_bits": 32,
+                "reserved_kill_bits": 32
+            },
+            "features": ["UserMemory", "BlockWrite", "Lock", "Kill"],
+            "notes": "EPC expandable to 480 bits. Unique TID."
+         }
+         
+      }
+    },
+    "3": {
+        "name": "NXP",
+        "models": {
+            "816": { 
+                "model_name": "UCODE 7",
+                "memory": {
+                    "epc_bits": 128,
+                    "user_bits": 0,
+                    "tid_bits": 96,
+                    "reserved_access_bits": 32,
+                    "reserved_kill_bits": 32                    
+                },
+                "features": ["ParallelEncoding", "TagPowerIndicator"],
+                "notes": "Optimized for read performance."
+            },
+             "824": { 
+                "model_name": "UCODE 8",
+                "memory": {
+                    "epc_bits": 128,
+                    "user_bits": 0,
+                    "tid_bits": 96, 
+                    "reserved_access_bits": 32,
+                    "reserved_kill_bits": 32                   
+                },
+                "features": ["SelfAdjustSensitivity", "MemoryIntegrityCheck", "TagPowerIndicator"],
+                 "notes": "Successor to UCODE 7, improved sensitivity."
+            }           
+        }
+    }
+    
+  }
+} 
