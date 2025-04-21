@@ -7,6 +7,9 @@
 # --- Keep these specific files and top-level directories ---
 !uhf_rfid/
 !doc/
+!doc/**/*.md
+!doc/**/*.mmd
+!doc/**/*.py
 !requirements.txt
 !README.md
 !README.bg.md

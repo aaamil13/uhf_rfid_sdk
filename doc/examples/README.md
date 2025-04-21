@@ -1,6 +1,6 @@
 # UHF RFID Library Examples
 
-This directory contains example scripts demonstrating how to use the `uhf-rfid` library.
+This directory contains example scripts demonstrating how to use the `uhf-rfid` library from https://github.com/aaamil13/uhf_rfid_sdk.
 
 ## About the Library
 

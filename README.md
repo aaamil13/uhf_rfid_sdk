@@ -36,8 +36,8 @@ Or for development (to include testing dependencies and use local changes immedi
 
 ```bash
 # Clone the repository
-git clone https://github.com/your_username/uhf_rfid.git # Replace with actual URL
-cd uhf_rfid
+git clone https://github.com/aaamil13/uhf_rfid_sdk.git
+cd uhf_rfid_sdk
 
 # Install in editable mode with dev dependencies
 pip install -e ".[dev]"
