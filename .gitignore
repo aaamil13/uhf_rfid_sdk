@@ -9,9 +9,19 @@
 !doc/
 !requirements.txt
 !README.md
+!README.bg.md
 !pyproject.toml
 !LICENSE
 !.gitignore
+
+# Explicitly allow all Python files and important files in uhf_rfid directory
+!uhf_rfid/**/*.py
+!uhf_rfid/**/__init__.py
+!uhf_rfid/**/*.json
+!uhf_rfid/utils/
+!uhf_rfid/core/
+!uhf_rfid/protocols/
+!uhf_rfid/transport/
 
 # --- Standard Python/IDE/OS ignores ---
 # Apply these ignores within the allowed directories as well as top-level
