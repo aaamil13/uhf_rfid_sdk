@@ -10,6 +10,8 @@
 !doc/**/*.md
 !doc/**/*.mmd
 !doc/**/*.py
+!doc/**/*.json
+!doc/**/*.txt
 !requirements.txt
 !README.md
 !README.bg.md
@@ -25,6 +27,9 @@
 !uhf_rfid/core/
 !uhf_rfid/protocols/
 !uhf_rfid/transport/
+
+# --- Explicitly ignore examples directory ---
+examples/
 
 # --- Standard Python/IDE/OS ignores ---
 # Apply these ignores within the allowed directories as well as top-level
