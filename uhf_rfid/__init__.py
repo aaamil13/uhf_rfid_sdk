@@ -17,6 +17,7 @@ from .transport import (
     UdpTransport
 )
 from .protocols.cph import CPHProtocol
+from .protocols.registry import get_installed_protocols, list_protocols
 
 __version__ = '0.2.0'
 
@@ -38,4 +39,7 @@ __all__ = [
     'UdpTransport',
     # Protocols
     'CPHProtocol',
+    # Protocol Registry
+    'get_installed_protocols',
+    'list_protocols',
 ] 

@@ -33,6 +33,9 @@ class CPHProtocol(BaseProtocol):
     Handles encoding commands and decoding responses/notifications by delegating
     to command-specific functions.
     """
+    VERSION = "4.0.1"
+    DESCRIPTION = "CPH protocol implementation for UHF RFID readers supporting version 4.0.1 command set."
+
     #FRAME_HEADER = cph_const.FRAME_HEADER
 
     # encode_command remains the same
@@ -282,3 +285,6 @@ class CPHProtocol(BaseProtocol):
     def get_error_message(self, status_code: int) -> str:
         """ Returns CPH error message for a status code. """
         return cph_const.CPH_STATUS_MESSAGES.get(status_code, f"Unknown CPH Status Code: 0x{status_code:02X}")
+
+    def __init__(self):
+        # existing initialization code

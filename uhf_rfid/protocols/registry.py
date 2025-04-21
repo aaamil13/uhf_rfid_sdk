@@ -1,6 +1,6 @@
 # uhf_rfid/protocols/registry.py
 
-from typing import Dict, Type, Optional
+from typing import Dict, Type, Optional, List, Tuple
 import logging
 
 from uhf_rfid.protocols.base_protocol import BaseProtocol
@@ -78,6 +78,46 @@ def create_protocol(name: str, *args, **kwargs) -> BaseProtocol:
 def list_protocols() -> list[str]:
     """Returns a list of names of all registered protocols."""
     return list(_protocol_registry.keys())
+
+def get_installed_protocols() -> List[Dict[str, str]]:
+    """
+    Returns detailed information about all installed protocols.
+    
+    Returns:
+        A list of dictionaries, each containing:
+        - name: The registered protocol name
+        - class_name: The name of the protocol class
+        - version: Version information (if available in the protocol class)
+        - description: Description of the protocol (if available)
+    """
+    protocols_info = []
+    
+    for name, protocol_class in _protocol_registry.items():
+        info = {
+            "name": name,
+            "class_name": protocol_class.__name__
+        }
+        
+        # Try to get version information if available
+        if hasattr(protocol_class, "VERSION"):
+            info["version"] = protocol_class.VERSION
+        elif hasattr(protocol_class, "version"):
+            info["version"] = protocol_class.version
+        else:
+            info["version"] = "Unknown"
+            
+        # Try to get description if available
+        if hasattr(protocol_class, "DESCRIPTION"):
+            info["description"] = protocol_class.DESCRIPTION
+        elif hasattr(protocol_class, "description"):
+            info["description"] = protocol_class.description
+        else:
+            # Use the class docstring if available
+            info["description"] = protocol_class.__doc__ or "No description available"
+            
+        protocols_info.append(info)
+        
+    return protocols_info
 
 # --- Auto-register known protocols ---
 # Register the CPH protocol implemented in this library
