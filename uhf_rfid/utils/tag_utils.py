@@ -8,10 +8,12 @@ from typing import Dict, Any, TYPE_CHECKING, Optional, cast
 if TYPE_CHECKING:
     from uhf_rfid.core.reader import Reader
     # Assuming RFIDError or a more specific error like ReadTagError exists
-    from uhf_rfid.core.exceptions import RFIDError
+    # from uhf_rfid.core.exceptions import RFIDError # Moved to main scope
 
 # Import actual constants
 from uhf_rfid.protocols.cph import constants as cph_const
+# Import base exception
+from uhf_rfid.core.exceptions import RFIDError
 
 logger = logging.getLogger(__name__)
 
@@ -88,8 +90,9 @@ async def identify_tag(reader: 'Reader', epc: str) -> Dict[str, Any]:
         "error": None,
     }
 
-    # --- Read TID Memory ---
+    tid_data: Optional[bytes] = None
     try:
+        # --- Read TID Memory ---
         tid_data = await reader.read_tag(
             epc=epc,
             mem_bank=cph_const.MEM_BANK_TID,
@@ -101,7 +104,8 @@ async def identify_tag(reader: 'Reader', epc: str) -> Dict[str, Any]:
 
         # --- Parse TID Data ---
         if len(tid_data) < 4:
-            raise ValueError(f"TID read returned less than 4 bytes ({len(tid_data)})")
+            # This specifically indicates a problem with the data returned, not the read itself
+            raise ValueError(f"TID read returned less than expected 4 bytes ({len(tid_data)})")
 
         allocation_class_id = tid_data[0]
         if allocation_class_id == 0xE2: # EPC Gen2 ACI
@@ -131,13 +135,27 @@ async def identify_tag(reader: 'Reader', epc: str) -> Dict[str, Any]:
                 logger.warning(f"Manufacturer definition not found for {epc} with MDID {mdid_str}.")
 
         else:
+            # This is a parsing issue based on TID content
             logger.warning(f"Unknown Allocation Class ID ({allocation_class_id:#04x}) in TID for EPC {epc}.")
             result["error"] = f"Unknown TID Allocation Class ID: {allocation_class_id:#04x}"
 
+    except RFIDError as e:
+        # Errors originating from the reader/protocol during read_tag
+        logger.warning(f"RFID Error reading TID for EPC {epc}: {e}")
+        result["error"] = f"RFID Error reading TID: {e}"
+        # tid_raw will remain None as tid_data assignment likely failed
+    except ValueError as e:
+        # Errors during parsing (e.g., length check)
+        logger.warning(f"Error parsing TID data for EPC {epc}: {e}")
+        result["error"] = f"Error parsing TID data: {e}"
+        # Keep raw TID if it was successfully read but parsing failed
+        if tid_data is not None:
+            result["tid_raw"] = tid_data.hex() # Ensure raw data is stored if read was ok
     except Exception as e:
-        logger.warning(f"Failed to read or parse TID for EPC {epc}: {e}")
-        result["error"] = f"Failed to read/parse TID: {e}"
-        if "tid_raw" in result and result["tid_raw"] is None:
-            result["tid_raw"] = None
+        # Catch any other unexpected errors
+        logger.exception(f"Unexpected error identifying tag {epc}: {e}")
+        result["error"] = f"Unexpected error: {e}"
+        # Clear potentially partial results
+        if tid_data is None: result["tid_raw"] = None
 
     return result 

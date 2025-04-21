@@ -48,6 +48,9 @@ dev = [
     # Dependencies for development (testing, linting, formatting)
     "pytest>=7.0",
     "pytest-asyncio>=0.18",
+    "ruff",
+    "pytest-cov",
+    "mypy",
     # Add linters/formatters if you use them (e.g., flake8, black, mypy)
     # "flake8",
     # "black",
@@ -72,5 +75,9 @@ include = ["uhf_rfid*"] # Включва пакета uhf_rfid
 exclude = ["tests*", "examples*"]
 
 [tool.setuptools.package-data]
+# Include any non-Python files needed by the package
+# The key is the package name, the value is a list of glob patterns
+"uhf_rfid.utils" = ["*.json"]
+
 # If you had non-Python files inside your package (e.g., data files), list them here
 # "uhf_rfid" = ["*.dat"] # Example
