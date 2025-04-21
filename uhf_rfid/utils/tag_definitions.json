@@ -13,70 +13,700 @@
             "reserved_kill_bits": 32
           },
           "features": ["QT_SR", "QT_PE"],
+          "tid_prefix": "E280 1160",
+          "operating_frequency": "860-960 MHz (UHF)",
           "notes": "Standard high-performance tag."
         },
         "437": { 
           "model_name": "Monza R6-P",
           "memory": {
-            "epc_bits": 128,
-            "user_bits": 512, 
+            "epc_bits": 96,
+            "user_bits": 32,
             "tid_bits": 96,
             "reserved_access_bits": 32,
             "reserved_kill_bits": 32
           },
           "features": ["QT_SR", "QT_PE", "UserMemory"],
+          "tid_prefix": "E280 1170",
+          "operating_frequency": "860-960 MHz (UHF)",
           "notes": "Includes User Memory and additional EPC."
+        },
+        "438": {
+          "model_name": "Monza R6-A",
+          "memory": {
+            "epc_bits": 96,
+            "user_bits": 0,
+            "tid_bits": 96,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["QT_SR", "AutoTune"],
+          "tid_prefix": "E280 118C",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "Optimized for item-level tagging with AutoTune technology."
+        },
+        "439": {
+          "model_name": "Monza R6-B",
+          "memory": {
+            "epc_bits": 96,
+            "user_bits": 0,
+            "tid_bits": 96,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["QT", "Privacy"],
+          "tid_prefix": "E280 1171",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "Balanced performance with privacy features."
+        },
+        "730": {
+          "model_name": "M730",
+          "memory": {
+            "epc_bits": 128,
+            "user_bits": 0,
+            "tid_bits": 96,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["ShortRange", "Privacy", "AutoTune"],
+          "tid_prefix": "E280 1191",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "High-sensitivity rain chip optimized for retail and supply chain applications."
+        },
+        "750": {
+          "model_name": "M750",
+          "memory": {
+            "epc_bits": 96,
+            "user_bits": 32,
+            "tid_bits": 96,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["ShortRange", "Privacy", "AutoTune", "EnhancedSensitivity"],
+          "tid_prefix": "E280 1190",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "Highly sensitive tag with enhanced read range for challenging environments."
+        },
+        "770": {
+          "model_name": "M770",
+          "memory": {
+            "epc_bits": 128,
+            "user_bits": 32,
+            "tid_bits": 96,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["FastID", "TagFocus", "AutoTune"],
+          "tid_prefix": "E280 11A0",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "High-performance tag optimized for inventory applications with advanced AutoTune technology."
+        },
+        "775": {
+          "model_name": "M775",
+          "memory": {
+            "epc_bits": 128,
+            "user_bits": 32,
+            "tid_bits": 96,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["FastID", "TagFocus", "AutoTune", "EnhancedSensitivity"],
+          "tid_prefix": "E280 11A5",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "Enhanced sensitivity version of the M770 for challenging RF environments."
+        },
+        "780": {
+          "model_name": "M780",
+          "memory": {
+            "epc_bits": 496,
+            "user_bits": 128,
+            "tid_bits": 96,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["FastID", "TagFocus", "Expanded_Memory", "EnhancedSensitivity"],
+          "tid_prefix": "E280 11B0",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "Extended memory tag for applications requiring larger data storage with EPC up to 496 bits."
+        },
+        "781": {
+          "model_name": "M781",
+          "memory": {
+            "epc_bits": 128,
+            "user_bits": 512,
+            "tid_bits": 96,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["TagFocus", "EnhancedSensitivity", "FastID"],
+          "tid_prefix": "E280 11B1",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "High-performance tag for challenging environments with advanced inventory features."
+        },
+        "440": {
+          "model_name": "Monza 4D",
+          "memory": {
+            "epc_bits": 128,
+            "user_bits": 32,
+            "tid_bits": 96,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["QT", "STP", "FastID"],
+          "tid_prefix": "E280 1100",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "Dual antenna ports for omnidirectional read capability."
+        },
+        "441": {
+          "model_name": "Monza 4E",
+          "memory": {
+            "epc_bits": 496,
+            "user_bits": 128,
+            "tid_bits": 96,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["QT", "STP", "Expanded_Memory"],
+          "tid_prefix": "E280 110C",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "Extended EPC and User memory for data-rich applications."
+        },
+        "442": {
+          "model_name": "Monza 4i",
+          "memory": {
+            "epc_bits": 256,
+            "user_bits": 480,
+            "tid_bits": 96,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["QT", "STP", "Large_User_Memory"],
+          "tid_prefix": "E280 1114",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "Optimized for item-level applications requiring significant user memory."
+        },
+        "443": {
+          "model_name": "Monza 4QT",
+          "memory": {
+            "epc_bits": 128,
+            "user_bits": 512,
+            "tid_bits": 96,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["QT", "STP", "UserMemory", "PrivacyMode"],
+          "tid_prefix": "E280 1105",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "Features enhanced user memory and specialized privacy modes."
+        },
+        "450": {
+          "model_name": "Monza X-2K Dura",
+          "memory": {
+            "epc_bits": 128,
+            "user_bits": 2176,
+            "tid_bits": 96,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["Expanded_Memory", "HighDurability", "RadiationHardened", "ExtendedTemperatureRange"],
+          "tid_prefix": "E280 1150",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "Durable design with 2K user memory for harsh environments and industrial applications."
+        },
+        "451": {
+          "model_name": "Monza X-8K Dura",
+          "memory": {
+            "epc_bits": 128,
+            "user_bits": 8192,
+            "tid_bits": 96,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["Expanded_Memory", "HighDurability", "RadiationHardened", "ExtendedTemperatureRange", "Large_User_Memory"],
+          "tid_prefix": "E280 1151",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "Ultra-high memory capacity with 8K user memory for data-intensive industrial applications."
         }
-        
       }
     },
     "2": { 
       "name": "Alien Technology",
       "models": {
-         "218": { 
-            "model_name": "Higgs 3",
-            "memory": {
-                "epc_bits": 96, 
-                "user_bits": 512,
-                "tid_bits": 64, 
-                "reserved_access_bits": 32,
-                "reserved_kill_bits": 32
-            },
-            "features": ["UserMemory", "BlockWrite", "Lock", "Kill"],
-            "notes": "EPC expandable to 480 bits. Unique TID."
-         }
-         
+        "218": { 
+          "model_name": "Higgs 3",
+          "memory": {
+            "epc_bits": 96, 
+            "user_bits": 512,
+            "tid_bits": 64, 
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["UserMemory", "BlockWrite", "Lock", "Kill"],
+          "tid_prefix": "E200 3412",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "EPC expandable to 480 bits. Unique TID."
+        },
+        "219": {
+          "model_name": "Higgs 4",
+          "memory": {
+            "epc_bits": 128,
+            "user_bits": 128,
+            "tid_bits": 64,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["UserMemory", "BlockWrite", "Lock", "FastID", "Memory_Mapping"],
+          "tid_prefix": "E280 3414",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "Optimized for use in challenging RF environments."
+        },
+        "225": {
+          "model_name": "Higgs 9",
+          "memory": {
+            "epc_bits": 496,
+            "user_bits": 688,
+            "tid_bits": 48,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["FastID", "AntiTheft", "AutotuneCircuitry"],
+          "tid_prefix": "E280 3424",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "High-performance tag with extended EPC memory."
+        },
+        "226": {
+          "model_name": "Higgs 10",
+          "memory": {
+            "epc_bits": 128,
+            "user_bits": 0,
+            "tid_bits": 48,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["FastID", "EnhancedSensitivity", "AutotuneCircuitry"],
+          "tid_prefix": "E280 3430",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "Cost-effective chip with high performance and reliability."
+        },
+        "227": {
+          "model_name": "Higgs EC",
+          "memory": {
+            "epc_bits": 128,
+            "user_bits": 0,
+            "tid_bits": 48,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["BlockWrite", "Lock", "Kill", "EnergyCaptureCircuit"],
+          "tid_prefix": "E280 3435",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "Features enhanced energy harvesting circuitry for improved read range."
+        }
       }
     },
     "3": {
-        "name": "NXP",
-        "models": {
-            "816": { 
-                "model_name": "UCODE 7",
-                "memory": {
-                    "epc_bits": 128,
-                    "user_bits": 0,
-                    "tid_bits": 96,
-                    "reserved_access_bits": 32,
-                    "reserved_kill_bits": 32                    
-                },
-                "features": ["ParallelEncoding", "TagPowerIndicator"],
-                "notes": "Optimized for read performance."
-            },
-             "824": { 
-                "model_name": "UCODE 8",
-                "memory": {
-                    "epc_bits": 128,
-                    "user_bits": 0,
-                    "tid_bits": 96, 
-                    "reserved_access_bits": 32,
-                    "reserved_kill_bits": 32                   
-                },
-                "features": ["SelfAdjustSensitivity", "MemoryIntegrityCheck", "TagPowerIndicator"],
-                 "notes": "Successor to UCODE 7, improved sensitivity."
-            }           
+      "name": "NXP",
+      "models": {
+        "816": { 
+          "model_name": "UCODE 7",
+          "memory": {
+            "epc_bits": 128,
+            "user_bits": 0,
+            "tid_bits": 96,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32                    
+          },
+          "features": ["ParallelEncoding", "TagPowerIndicator"],
+          "tid_prefix": "E280 6810",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "Optimized for read performance."
+        },
+        "824": { 
+          "model_name": "UCODE 8",
+          "memory": {
+            "epc_bits": 128,
+            "user_bits": 0,
+            "tid_bits": 96, 
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32                   
+          },
+          "features": ["SelfAdjustSensitivity", "MemoryIntegrityCheck", "TagPowerIndicator"],
+          "tid_prefix": "E280 6894",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "Successor to UCODE 7, improved sensitivity."
+        },
+        "825": {
+          "model_name": "UCODE 9",
+          "memory": {
+            "epc_bits": 96,
+            "user_bits": 0,
+            "tid_bits": 96,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["SelfAdjustSensitivity", "MemoryIntegrityCheck", "TagPowerIndicator", "EnhancedReadRange"],
+          "tid_prefix": "E280 6995",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "Latest generation with exceptional read range and performance."
+        },
+        "805": {
+          "model_name": "UCODE 5",
+          "memory": {
+            "epc_bits": 128,
+            "user_bits": 32,
+            "tid_bits": 96,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["BlockWrite", "BlockErase", "HighReadSensitivity"],
+          "tid_prefix": "E280 1102",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "Earlier generation RFID chip with balanced performance characteristics for general applications."
+        },
+        "806": {
+          "model_name": "UCODE 6",
+          "memory": {
+            "epc_bits": 96,
+            "user_bits": 0,
+            "tid_bits": 96,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["FastWriteSpeed", "ReadRangeOptimization", "TagPowerIndicator"],
+          "tid_prefix": "E280 1160",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "Performance optimized UHF tag with improved write speeds and read range."
+        },
+        "817": {
+          "model_name": "UCODE 7+",
+          "memory": {
+            "epc_bits": 448,
+            "user_bits": 2048,
+            "tid_bits": 96,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["Extended_EPC", "UserMemory", "BlockWrite", "TagPowerIndicator"],
+          "tid_prefix": "E280 6D92",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "Enhanced version of UCODE 7 with extended memory and improved performance."
+        },
+        "818": {
+          "model_name": "UCODE 7XM-1k",
+          "memory": {
+            "epc_bits": 448,
+            "user_bits": 1024,
+            "tid_bits": 96,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["Extended_EPC", "UserMemory", "BlockWrite", "PasswordProtection"],
+          "tid_prefix": "E280 6D12",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "Extended memory version of UCODE 7 with 1K user memory for data-rich applications."
+        },
+        "819": {
+          "model_name": "UCODE 7XM-2k",
+          "memory": {
+            "epc_bits": 448,
+            "user_bits": 2048,
+            "tid_bits": 96,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["Extended_EPC", "UserMemory", "BlockWrite", "PasswordProtection"],
+          "tid_prefix": "E280 6F12",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "Higher capacity version of UCODE 7XM with 2K user memory for data-intensive applications."
+        },
+        "826": {
+          "model_name": "UCODE DNA",
+          "memory": {
+            "epc_bits": 224,
+            "user_bits": 3072,
+            "tid_bits": 96,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["Cryptographic", "SecureAuthentication", "Extended_User_Memory", "AES128"],
+          "tid_prefix": "E2C0 6892",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "Secure UHF tag with cryptographic features and large user memory for high-security applications."
+        },
+        "827": {
+          "model_name": "UCODE DNA City",
+          "memory": {
+            "epc_bits": 224,
+            "user_bits": 1024,
+            "tid_bits": 96,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["Cryptographic", "SecureAuthentication", "Extended_User_Memory", "UrbanInfrastructureOptimized"],
+          "tid_prefix": "E2C0 6891",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "Variant of UCODE DNA optimized for smart city and urban infrastructure applications."
+        },
+        "828": {
+          "model_name": "UCODE DNA Track",
+          "memory": {
+            "epc_bits": 448,
+            "user_bits": 256,
+            "tid_bits": 96,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["Cryptographic", "SecureAuthentication", "Extended_EPC", "TrackingOptimized"],
+          "tid_prefix": "E2C0 6893",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "Specialized version of UCODE DNA designed for secure tracking and supply chain applications."
+        },
+        "829": {
+          "model_name": "UCODE I2C",
+          "memory": {
+            "epc_bits": 160,
+            "user_bits": 3328,
+            "tid_bits": 96,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["I2C_Interface", "DualInterface", "Extended_User_Memory", "PasswordProtection"],
+          "tid_prefix": "E2C0 68A0",
+          "operating_frequency": "860-960 MHz (UHF) and I2C",
+          "notes": "Dual interface tag with both UHF RFID and I2C interfaces for embedded system integration."
+        },
+        "830": {
+          "model_name": "UCODE G2iM",
+          "memory": {
+            "epc_bits": 256,
+            "user_bits": 320,
+            "tid_bits": 96,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["Extended_EPC", "UserMemory", "BlockWrite", "FastRead"],
+          "tid_prefix": "E200 680A",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "General purpose UHF tag with balanced memory configuration for identification and data storage."
+        },
+        "831": {
+          "model_name": "UCODE G2iM+",
+          "memory": {
+            "epc_bits": 448,
+            "user_bits": 512,
+            "tid_bits": 96,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["Extended_EPC", "Extended_User_Memory", "BlockWrite", "FastRead"],
+          "tid_prefix": "E200 680B",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "Enhanced version of G2iM with increased EPC and user memory for data-rich applications."
+        },
+        "832": {
+          "model_name": "UCODE G2iL",
+          "memory": {
+            "epc_bits": 128,
+            "user_bits": 0,
+            "tid_bits": 64,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["HighSensitivity", "LowPowerConsumption", "CostOptimized"],
+          "tid_prefix": "E200 6806",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "Cost-effective UHF tag optimized for high volume item-level tagging applications."
+        },
+        "850": {
+          "model_name": "im",
+          "memory": {
+            "epc_bits": 256,
+            "user_bits": 512,
+            "tid_bits": 96,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["GenericIP", "Extended_EPC", "UserMemory", "PasswordProtection"],
+          "tid_prefix": "E280 680A",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "General purpose NXP im-series UHF chip with balanced memory allocation for identification and data storage."
         }
+      }
+    },
+    "4": {
+      "name": "STMicroelectronics",
+      "models": {
+        "127": {
+          "model_name": "ST25TN01K",
+          "memory": {
+            "epc_bits": 128,
+            "user_bits": 1024,
+            "tid_bits": 96,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["PasswordProtection", "UserMemory", "MultibankWriteProtection"],
+          "tid_prefix": "E280 4127",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "UHF tag with 1K user memory designed for industrial applications."
+        },
+        "128": {
+          "model_name": "ST25TV02K",
+          "memory": {
+            "epc_bits": 256,
+            "user_bits": 2048,
+            "tid_bits": 96,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["PasswordProtection", "UserMemory", "TamperDetection", "ExtendedMemory"],
+          "tid_prefix": "E280 4128",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "UHF tag with 2K user memory and enhanced security features."
+        },
+        "129": {
+          "model_name": "ST25TV02KC",
+          "memory": {
+            "epc_bits": 256,
+            "user_bits": 2048,
+            "tid_bits": 96,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["PasswordProtection", "UserMemory", "TamperDetection", "ExtendedMemory", "Crypto"],
+          "tid_prefix": "E280 4129",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "Cryptographic UHF tag with 2K user memory for secure applications."
+        }
+      }
+    },
+    "5": {
+      "name": "EM Microelectronic",
+      "models": {
+        "126": {
+          "model_name": "EM4126",
+          "memory": {
+            "epc_bits": 128,
+            "user_bits": 0,
+            "tid_bits": 64,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["Lock", "Kill"],
+          "tid_prefix": "E280 5126",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "Basic UHF tag for general identification applications."
+        },
+        "423": {
+          "model_name": "EM4423",
+          "memory": {
+            "epc_bits": 112,
+            "user_bits": 1024,
+            "tid_bits": 80,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["DualFrequency", "NFC_UHF", "PasswordProtection", "UserMemory"],
+          "tid_prefix": "E280 5423",
+          "operating_frequency": "860-960 MHz (UHF) and 13.56 MHz (HF)",
+          "notes": "Dual-frequency tag supporting both UHF EPC Gen2 and HF ISO 14443."
+        },
+        "425": {
+          "model_name": "EM4425 (EM|echo-V)",
+          "memory": {
+            "epc_bits": 448,
+            "user_bits": 2048,
+            "tid_bits": 96,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["DualFrequency", "NFC_UHF", "PasswordProtection", "UserMemory", "ExtendedMemory"],
+          "tid_prefix": "E280 5425",
+          "operating_frequency": "860-960 MHz (UHF) and 13.56 MHz (HF)",
+          "notes": "Enhanced dual-frequency tag with high memory capacity."
+        }
+      }
+    },
+    "6": {
+      "name": "KSW Microtec",
+      "models": {
+        "205": {
+          "model_name": "KX2005XBL",
+          "memory": {
+            "epc_bits": 128,
+            "user_bits": 0,
+            "tid_bits": 48,
+            "reserved_access_bits": 32,
+            "reserved_kill_bits": 32
+          },
+          "features": ["OnMetal", "High_Performance"],
+          "tid_prefix": "E280 6205",
+          "operating_frequency": "860-960 MHz (UHF)",
+          "notes": "Specialized tag optimized for placement on metal surfaces."
+        }
+      }
     }
-    
+  },
+  "label_functions": {
+    "ARC_Certified": {
+      "description": "ARC (Auburn University RFID Lab Certification) certified RFID labels that meet specific performance standards.",
+      "use_cases": ["Supply Chain", "Retail", "Logistics"],
+      "compatible_ics": ["Impinj Monza R6", "NXP UCODE 8", "Alien Higgs 3"]
+    },
+    "Avery_Dennison": {
+      "description": "RFID labels manufactured by Avery Dennison, known for high-quality adhesive technology and consistent performance.",
+      "use_cases": ["Retail", "Apparel", "Supply Chain", "Healthcare"],
+      "compatible_ics": ["Impinj Monza R6", "NXP UCODE 8", "NXP UCODE 9"]
+    },
+    "LED_RFID": {
+      "description": "RFID labels with integrated LED that can be activated when the tag is powered by an RFID reader.",
+      "use_cases": ["Visual Inventory Management", "Item Locating", "Customer Engagement"],
+      "compatible_ics": ["Impinj Monza R6-P", "EM4423"]
+    },
+    "Microwavable": {
+      "description": "RFID labels designed to withstand microwave heating without performance degradation.",
+      "use_cases": ["Food Service", "Prepared Meals", "Healthcare"],
+      "compatible_ics": ["Impinj Monza R6", "NXP UCODE 9", "Alien Higgs 4"]
+    },
+    "On_Liquid": {
+      "description": "Specialized RFID labels optimized for placement on liquid containers or surfaces with high liquid content.",
+      "use_cases": ["Beverages", "Pharmaceuticals", "Chemicals", "Cosmetics"],
+      "compatible_ics": ["Impinj Monza R6-P", "NXP UCODE 8", "Alien Higgs 4"]
+    },
+    "On_Metal": {
+      "description": "RFID labels designed specifically for application on metal surfaces, which typically interfere with standard RFID tags.",
+      "use_cases": ["Asset Tracking", "Industrial Applications", "IT Asset Management"],
+      "compatible_ics": ["Impinj Monza R6", "KX2005XBL", "ST25TV02K"]
+    },
+    "Laboratory": {
+      "description": "RFID labels designed for laboratory environments, often with chemical resistance and sterilization compatibility.",
+      "use_cases": ["Sample Tracking", "Medical Research", "Pharmaceutical Manufacturing"],
+      "compatible_ics": ["Impinj Monza R6", "NXP UCODE 8", "Alien Higgs 3"]
+    },
+    "Vehicle": {
+      "description": "Durable RFID labels designed for application on vehicles, withstanding outdoor conditions and high speeds.",
+      "use_cases": ["Fleet Management", "Parking Access", "Automated Toll Collection"],
+      "compatible_ics": ["Impinj Monza 4E", "NXP UCODE 9", "Alien Higgs 9"]
+    },
+    "Smart_Textile": {
+      "description": "RFID tags integrated into textile materials, enabling tracking and authentication of garments and other textile products.",
+      "use_cases": ["Apparel", "Supply Chain", "Authentication", "Inventory Management"],
+      "compatible_ics": ["Impinj Monza R6", "NXP UCODE 7", "Alien Higgs 3"]
+    },
+    "Tamper_Evident": {
+      "description": "RFID labels that show clear evidence if tampered with or removed from the original application surface.",
+      "use_cases": ["Security", "Authentication", "Anti-Counterfeiting", "High-Value Asset Tracking"],
+      "compatible_ics": ["NXP NTAG 213 TT", "NXP NTAG 424 DNA TT", "ST25TV02KC"]
+    },
+    "Tire": {
+      "description": "Specialized RFID labels designed for embedding in or application to tires, withstanding extreme conditions.",
+      "use_cases": ["Tire Manufacturing", "Vehicle Management", "Tire Lifecycle Tracking"],
+      "compatible_ics": ["Impinj Monza 4E", "NXP UCODE 8", "Alien Higgs 4"]
+    },
+    "UHF_920_925": {
+      "description": "RFID labels optimized for the 920.5-924.5 MHz frequency range, common in certain regions including Japan.",
+      "use_cases": ["Regional Compliance", "Global Supply Chain", "Cross-Border Logistics"],
+      "compatible_ics": ["Impinj Monza R6", "NXP UCODE 9", "Alien Higgs 9"]
+    }
   }
-} 
+}
